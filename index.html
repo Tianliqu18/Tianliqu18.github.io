@@ -144,9 +144,24 @@
               </td>
             </tr>
 
-            <tr>
+            <tr onmouseout="lidar_stop()" onmouseover="lidar_start()">
               <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src='images/sandlidar.png' width=100%>
+                <div class="one">
+                  <div class="two" id='lidar_image'>
+                    <img src='images/convexhull.png' width=100%>
+                  </div>
+                  <img src='images/sandlidar.png' width=100%>
+                </div>
+                <script type="text/javascript">
+                  function lidar_start() {
+                    document.getElementById('lidar_image').style.opacity = "1";
+                  }
+
+                  function lidar_stop() {
+                    document.getElementById('lidar_image').style.opacity = "0";
+                  }
+                  lidar_stop()
+                </script>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
                 <span class="papertitle">LiDAR Volume Estimation</span>
